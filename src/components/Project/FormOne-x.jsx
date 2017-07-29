@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react'
 import { Field, reduxForm } from 'redux-form';
 import { Progress, InputGroup, InputGroupAddon, Col, Label, Form, FormGroup, Input, Button, FormFeedback, Alert } from 'reactstrap';
-import cx from 'classnames';
+
+export const fields = ['name','funding','category','summary','description','reason','outcome1','outcome2','outcome3', ]
+
+
 
 class renderInput extends React.PureComponent {
   componentDidMount() {
@@ -32,10 +35,13 @@ class renderInput extends React.PureComponent {
   }
 }
 
-const Login = props => {
-  const { handleSubmit, submitState, errors } = props;
-  return (
-    <Form onSubmit={handleSubmit}>
+class FormOne extends Component {
+  render() {
+    const {
+      fields: { name, summary, renderInput},
+      handleSubmit
+    } = this.props
+    return (<form onSubmit={handleSubmit}>
 
       <div className="text-center">What are you waiting for?</div>
       <Progress multi>
@@ -49,8 +55,10 @@ const Login = props => {
       </p>
 
       <FormGroup>
+
         <label htmlFor="name">Idea Name</label>
-        <Field name="name" component={renderInput} type="name" placeholder="Make it catchy!" />
+        <Field name="name" component={renderInput} type="text" placeholder="Make it catchy!" {...name}/>
+
       </FormGroup>
 
       <FormGroup>
@@ -101,25 +109,30 @@ const Login = props => {
 
       </FormGroup>
 
+      <div>
+        <button type="submit">
+          Next <i/>
+        </button>
+      </div>
+
+    </form>
+    )
+  }
+}
+
+FormOne.propTypes = {
+  fields: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired
+}
+
+
+ export default reduxForm({
+   form: 'wizard',
+   fields,                      // <------ only fields on this page
+   destroyOnUnmount: false,     // <------ preserve form data
+   validate
+ })(FormOne)
 
 
 
-      { errors && errors.status === 401 &&
-      <Alert color="danger">
-        <span> Hm, that isn&apos;t be quite right. </span>
-        <br />
-        <span> Please double-check and try again. </span>
-      </Alert>}
-      <Button color="primary">
-        { submitState ? <span> <i className="fa fa-refresh fa-spin" /> </span> : 'Next' }
-      </Button>
-    </Form>
-  );
-};
 
-const LoginForm = reduxForm({
-  form: 'Login', // a unique name for this form
-})(Login);
-
-
-export default LoginForm;

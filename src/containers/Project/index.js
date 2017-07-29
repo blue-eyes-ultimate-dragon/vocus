@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 import { registerUser } from 'reducers/user';
 
 import Navigation from 'src/components/Navigation';
-import Login from 'src/components/Project';
+import WizardForm from 'src/components/Project/WizardForm';
 
 class LoginPage extends Component {
   render() {
     return (
       <div>
-        <Helmet title="Login to Vocus" />
+        <Helmet title=" Vocus" />
         <Navigation {...this.props} />
-        <Login {...this.props} />
+        <WizardForm {...this.props} />
       </div>
     );
   }
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(WizardForm);

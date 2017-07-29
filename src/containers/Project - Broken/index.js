@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { registerUser } from 'reducers/user';
 
 import Navigation from 'src/components/Navigation';
-import Project from 'src/components/Project';
+import Project from 'src/components/Project - Broken/index';
 
 class ProjectPage extends Component {
   render() {
