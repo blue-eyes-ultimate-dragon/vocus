@@ -41,10 +41,8 @@ const Login = props => {
       <Progress multi>
         <Progress bar animated color="success" value="25">The Idea</Progress>
         <Progress bar animated color="info" value="25">The Community</Progress>
-        <Progress bar animated color="info" value="25">Communication</Progress>
+        <Progress bar animated color="info" value="25">Marketing</Progress>
         <Progress bar animated color="info" value="25">Go!</Progress>
-
-
       </Progress>
 
       <p>
@@ -97,7 +95,10 @@ const Login = props => {
 
       <FormGroup>
         <label htmlFor="outcome">Final Outcomes</label>
-        <Field name="outcome" component={renderInput} type="outcome" placeholder="Hows it going to help the community?"/>
+        <Field name="outcome1" component={renderInput} type="outcome1" placeholder="Hows it going to help the community?"/>
+        <Field name="outcome2" component={renderInput} type="outcome2" placeholder="Outcome 2"/>
+        <Field name="outcome3" component={renderInput} type="outcome3" placeholder="Outcome 3"/>
+
       </FormGroup>
 
 
