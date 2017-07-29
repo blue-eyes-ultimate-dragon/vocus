@@ -27,6 +27,7 @@ import { NotFound, Redirect } from 'kit/lib/routing';
 import Home from 'src/containers/Home';
 import Login from 'src/containers/Login';
 import Profile from 'src/containers/Profile';
+import Project from 'src/containers/Project';
 
 
 // GraphQL queries
@@ -59,8 +60,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
-
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/Project/create" component={Project} />
+
           {/* Stories */}
 
           {/* <Route path="/page/:name" component={Page} />*/}

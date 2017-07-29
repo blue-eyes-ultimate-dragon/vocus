@@ -9,32 +9,32 @@ import s from './styles.scss';
 const loggedInbar = user =>
   (<Nav navbar>
     <NavItem>
-      <Link to="/stories">Projects</Link>
+      <Link to="/Projects">Projects</Link>
     </NavItem>
     <NavItem>
       <Link to="/art">Issues</Link>
     </NavItem>
     <NavItem>
-      <Link to="/stories">Votes</Link>
+      <Link to="/Projects">Votes</Link>
     </NavItem>
     <NavItem divider />
     <NavItem>
-      <Link to="/stories">
+      <Link to="/Projects">
         <i className="fa fa-users" />
       </Link>
     </NavItem>
     <NavItem>
-      <Link to="/stories">
+      <Link to="/Projects">
         <i className="fa fa-lg fa-inbox" />
       </Link>
     </NavItem>
     <NavItem>
-      <Link to="/stories">
+      <Link to="/Projects">
         <i className="fa fa-lg fa-bell" />
       </Link>
     </NavItem>
     <NavItem className="mr-auto">
-      <Link to="/stories/create">
+      <Link to="/Project/create">
         <Button size="sm" color="primary">
           Compose
         </Button>{' '}
@@ -45,13 +45,13 @@ const loggedInbar = user =>
 const loggedOutBar = () =>
   (<Nav navbar>
     <NavItem>
-      <Link to="/stories">Projects</Link>
+      <Link to="/Projects">Projects</Link>
     </NavItem>
     <NavItem>
       <Link to="/art">Issues</Link>
     </NavItem>
     <NavItem>
-      <Link to="/stories">Votes</Link>
+      <Link to="/Projects">Votes</Link>
     </NavItem>
     <NavItem divider />
     <NavItem className="mr-auto">
