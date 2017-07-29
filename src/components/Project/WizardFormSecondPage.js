@@ -25,15 +25,23 @@ const WizardFormSecondPage = (props) => {
       </p>
 
 
-      <Field name="email" type="email" component={renderInput} label="Email"/>
-      <div>
-        <label>Sex</label>
-        <div>
-          <label><Field name="sex" component="input" type="radio" value="male"/> Male</label>
-          <label><Field name="sex" component="input" type="radio" value="female"/> Female</label>
-          <Field name="sex" component={renderError}/>
-        </div>
-      </div>
+      <FormGroup>
+
+      <label htmlFor="council">Local Council Name</label>
+      <Field name="council" component={renderInput} type="text" placeholder="Who are you going to help?" />
+
+      </FormGroup>
+
+      <FormGroup>
+
+        <label htmlFor="sponsor">Council Member </label>
+        <Field name="sponsor" component={renderInput} type="text" placeholder="Council Member Name and Contact" />
+
+      </FormGroup>
+
+      
+
+
       <div>
         <Button color="primary" type="button" className="previous" onClick={previousPage}>Previous </Button>
         <Button color="primary" type="submit">

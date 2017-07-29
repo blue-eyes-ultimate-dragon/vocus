@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cff8d6f5-0316-43ea-be4e-b392e0048b8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Project/FormOne-x.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Project/renderInput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Project/validate.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Project/Form.jsx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/Project/index.js" afterPath="$PROJECT_DIR$/src/components/Project - Broken/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Project - Broken/index.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Project - Broken/index.js" afterPath="$PROJECT_DIR$/src/containers/Project - Broken/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Project/index.js" afterPath="$PROJECT_DIR$/src/containers/Project/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" afterPath="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" afterPath="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,8 +81,8 @@
       <file leaf-file-name="WizardFormFirstPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="93" selection-end-line="26" selection-end-column="93" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -116,17 +112,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WizardFormSecondPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WizardFormSecondPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="383">
+              <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WizardFormThirdPage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WizardFormThirdPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -172,9 +170,9 @@
         <option value="$PROJECT_DIR$/src/components/Project - Broken/Form.jsx" />
         <option value="$PROJECT_DIR$/src/components/Project/renderField.js" />
         <option value="$PROJECT_DIR$/src/components/Project/renderInput.js" />
+        <option value="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" />
         <option value="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" />
         <option value="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" />
-        <option value="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" />
       </list>
     </option>
   </component>
@@ -327,12 +325,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501322987499</updated>
-      <workItem from="1501322992981" duration="13830000" />
+      <workItem from="1501322992981" duration="14557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13830000" />
+    <option name="totallyTimeSpent" value="14557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="379" y="43" width="1041" height="757" extended-state="0" />
@@ -481,10 +479,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="93" selection-end-line="26" selection-end-column="93" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -493,16 +501,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="383">
+          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

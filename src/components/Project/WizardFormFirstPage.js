@@ -24,7 +24,7 @@ const WizardFormFirstPage = (props) => {
       <FormGroup>
 
         <label htmlFor="name">Idea Name</label>
-        <Field name="name" component={renderInput} type="text" placeholder="Make it catchy!" {...name}/>
+        <Field name="name" component={renderInput} type="text" placeholder="Make it catchy!" />
 
       </FormGroup>
 
