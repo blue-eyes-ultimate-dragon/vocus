@@ -1,0 +1,34 @@
+/* Regular @import url statements work as you'd expect them to -- alternatively
+you can import locally, and they wind up in the resulting bundle */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Volkorn');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
+body {
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.white {
+  color: white !important;
+}
+
+/*
+@media (min-width: 1200px) {
+  .container {
+    width: 1400px;
+    max-width: 100%;
+  }
+}*/
+
+
+
+.material-icons.md-light.md-inactive { 
+  color: #999;
+  cursor: pointer;
+ }

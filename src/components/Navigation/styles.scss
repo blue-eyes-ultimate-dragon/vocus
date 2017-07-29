@@ -1,0 +1,77 @@
+@import '../../variables';
+
+.logo {
+  font-family: 'Baloo Thambi', $sans !important;
+  width: 100% !important;
+  font-size: 20px;
+}
+
+.sublogo {
+  @extend .logo;
+  font-family: $sans !important;
+  text-transform: capitalize;
+}
+
+.byline {
+  font-family: $sans !important;
+  font-size: 16px;
+}
+
+.darken {
+  color: darken($color-white, 10) !important;
+  opacity: 0.5;
+}
+
+.menu {
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+  z-index: 3;
+  position: relative;
+  background: #222;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, .08);
+
+  a {
+    color: white;
+    font-family: $sans;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+.transparent {
+  background: transparent;
+}
+
+.secondary {
+  @extend .menu;
+  background: white;
+  color: $primary;
+
+  a {
+    color: $primary;
+    font-family: $sans;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+.image {
+  max-width: 250px !important;
+  max-height: 40px !important;
+}
+
+.nav_container {
+  align-items: center !important;
+}
+
+.responsive {
+  max-width: 150px;
+  max-height: 60px;
+}
