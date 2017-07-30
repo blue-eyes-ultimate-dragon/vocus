@@ -9,55 +9,20 @@ import s from './styles.scss';
 const loggedInbar = user =>
   (<Nav navbar>
     <NavItem>
-      <Link to="/stories">Projects</Link>
+      <Link to="/discover">Projects</Link>
     </NavItem>
     <NavItem>
       <Link to="/art">Issues</Link>
     </NavItem>
     <NavItem>
       <Link to="/stories">Votes</Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/stories">
-        <i className="fa fa-users" />
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/stories">
-        <i className="fa fa-lg fa-inbox" />
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/stories">
-        <i className="fa fa-lg fa-bell" />
-      </Link>
-    </NavItem>
-    <NavItem className="mr-auto">
-      <Link to="/stories/create">
-        <Button size="sm" color="primary">
-          Compose
-        </Button>{' '}
-      </Link>
     </NavItem>
   </Nav>);
 
 const loggedOutBar = () =>
   (<Nav navbar>
     <NavItem>
-      <Link to="/stories">Projects</Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/art">Issues</Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/stories">Votes</Link>
-    </NavItem>
-    <NavItem className="mr-auto">
-      <Link to="/login">
-        <Button size="sm" outline color="primary">
-          Login
-        </Button>{' '}
-      </Link>
+      <Link to="/discover">Projects</Link>
     </NavItem>
   </Nav>);
 
