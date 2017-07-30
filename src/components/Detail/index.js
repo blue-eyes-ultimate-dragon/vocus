@@ -49,7 +49,7 @@ const ProjectItem = props =>
   </Row>);
 
 const Detail = props => {
-  const project = list[0];
+  const project = list.find((item) =>  item.id === props.match.params.projectId);
 
   return (
     <Container className={s.projectList}>
