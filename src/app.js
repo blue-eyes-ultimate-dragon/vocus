@@ -24,11 +24,8 @@ import Home from 'src/containers/Home';
 import Login from 'src/containers/Login';
 import SignUp from 'src/containers/SignUp';
 import Profile from 'src/containers/Profile';
-<<<<<<< HEAD
 import Discover from 'src/containers/Discover';
-=======
 import Suburb from 'src/containers/Suburb';
->>>>>>> Add google places api and here mapss
 
 
 // GraphQL queries
@@ -63,11 +60,8 @@ class App extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/profile" component={Profile} />
-<<<<<<< HEAD
           <Route exact path="/discover" component={Discover} />
-=======
           <Route path="/locations/:location" component={Suburb} />
->>>>>>> Add google places api and here mapss
           {/* Stories */}
 
           {/* <Route path="/page/:name" component={Page} />*/}
