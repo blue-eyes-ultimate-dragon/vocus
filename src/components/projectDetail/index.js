@@ -50,7 +50,7 @@ const ProjectItem = props =>
 
   </Row>);
 
-const ProjectList = props => {
+const ProjectDeail = props => {
   const projects = list;
 
   return (
@@ -60,4 +60,4 @@ const ProjectList = props => {
   );
 };
 
-export default ProjectList;
+export default ProjectDeail;
