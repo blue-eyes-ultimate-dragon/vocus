@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import s from './styles.scss';
 import cx from 'classnames';
 import axios from 'axios';
+import employment from './workforce.json';
 
 class Suburb extends Component {
   constructor(props, context) {
@@ -14,17 +15,27 @@ class Suburb extends Component {
         lng: 0,
       },
       suburb: {},
+      council: null,
     };
   }
 
   async componentDidMount() {
+    const mapItRequest = await axios.get(
+      `http://mapit.openlocal.org.au/point/4326/${this.props.coordinates.lng},${this.props
+        .coordinates.lat}`,
+    );
+    let LGA = Object.keys(mapItRequest.data).find(val => mapItRequest.data[val].type === 'LGS');
+    LGA = mapItRequest.data[LGA];
     const coords = await axios.get(
       `https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json?prox=${this.props
         .coordinates.lat}%2C${this.props.coordinates
         .lng}%2C250&mode=retrieveAddresses&maxresults=1&gen=8&app_id=9OXb8Vl3T9qXYKDgNTzT&app_code=vp0x0jZHUKP-mgX0GZKobA`,
     );
     try {
-      this.setState({ suburb: coords.data.Response.View[0].Result[0].Location.Address });
+      this.setState({
+        council: LGA.name,
+        suburb: coords.data.Response.View[0].Result[0].Location.Address,
+      });
     } catch (e) {
       console.log(e);
     }
@@ -49,18 +60,33 @@ class Suburb extends Component {
   }
 
   render() {
+    const suburbEmployment = employment.find(val => val.LGA === this.state.council);
+    console.log(suburbEmployment);
     return (
       <Container className={s.background}>
         <Row>
-          <Col className="my-3" md={{ size: 6, offset: 3 }}>
+          <Col className="my-3 text-center" md={{ size: 12 }}>
             <h1>
               {' '}{this.state.suburb.District} {this.state.suburb.State}{' '}
               {this.state.suburb.PostalCode}{' '}
             </h1>
+            <div style={{ width: '100%', height: '480px' }} id="mapContainer" />
           </Col>
           <Col md={{ size: 6 }}>Sorry there are no projects in this suburb</Col>
           <Col md={{ size: 6 }}>
-            <div style={{ width: '100%', height: '480px' }} id="mapContainer" />
+            <p> LGA / Council: {this.state.council} </p>
+            {suburbEmployment &&
+              Object.keys(suburbEmployment)
+                .filter(val => {
+                  console.log(val);
+                  return val !== 'LGA' && val !== 'GSC District';
+                })
+                .map(val =>
+                  (<p>
+                    {' '}Predicted Employment in {val} for LGA: {suburbEmployment[val]}
+                  </p>),
+                )
+            }
           </Col>
         </Row>
       </Container>

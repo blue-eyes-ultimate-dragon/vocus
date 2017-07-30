@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 @connect(({ user }) => ({ user }))
 class SuburbContainer extends Component {
   render() {
-    console.log(Navigation);
     return (
       <div>
         <Helmet title="Stories | Vocus" />
