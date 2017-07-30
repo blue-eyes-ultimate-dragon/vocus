@@ -16,7 +16,7 @@ const renderColorSelector = ({ input, meta: { touched, error } }) => (
 )
 
 const WizardFormThirdPage = (props) => {
-  const { handleSubmit, pristine, previousPage, submitting } = props
+  const { handleSubmit, pristine, previousPage, submitting, submitState } = props
   return (
     <form onSubmit={handleSubmit}>
 
@@ -31,25 +31,39 @@ const WizardFormThirdPage = (props) => {
       <p>
       </p>
 
+      <label htmlFor="council">Online and Social Media</label>
+
+      <InputGroup>
+        <InputGroupAddon>Website </InputGroupAddon>
+        <Input placeholder="https://vocus.com" />
+      </InputGroup>
+      <p>
+      </p>
+      <InputGroup>
+        <InputGroupAddon>Facebook</InputGroupAddon>
+        <Input placeholder="https://www.facebook.com/GovHackAU/" />
+      </InputGroup>
+      <p>
+      </p>
+      <InputGroup>
+        <InputGroupAddon>Twitter  </InputGroupAddon>
+        <Input placeholder="@GovHackAU" />
+      </InputGroup>
+      <p>
+      </p>
+      <InputGroup>
+        <InputGroupAddon>Youtube  </InputGroupAddon>
+        <Input placeholder="https://www.youtube.com/user/GovHackAustralia" />
+      </InputGroup>
+
+      <p>
+      </p>
+
       <div>
-        <label>Favorite Color</label>
-        <Field name="favoriteColor" component={renderColorSelector}/>
-      </div>
-      <div>
-        <label htmlFor="employed">Employed</label>
-        <div>
-          <Field name="employed" id="employed" component="input" type="checkbox"/>
-        </div>
-      </div>
-      <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" placeholder="Notes"/>
-        </div>
-      </div>
-      <div>
-        <button type="button" className="previous" onClick={previousPage}>Previous</button>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
+        <Button color="primary" type="button" className="previous" onClick={previousPage}>Previous </Button>
+        <Button color="primary" type="submit" disabled={pristine || submitting}>
+          { submitState ? <span> <i className="fa fa-refresh fa-spin" /> </span> : 'Submit' }
+        </Button>
       </div>
     </form>
   )

@@ -39,7 +39,6 @@ const WizardFormSecondPage = (props) => {
 
       </FormGroup>
 
-      
 
 
       <div>

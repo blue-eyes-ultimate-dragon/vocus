@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cff8d6f5-0316-43ea-be4e-b392e0048b8c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Project - Broken/index.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" afterPath="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" afterPath="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" afterPath="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -112,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WizardFormSecondPage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WizardFormSecondPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+            <state relative-caret-position="443">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="47" selection-end-column="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -124,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WizardFormThirdPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WizardFormThirdPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="338">
+              <caret line="61" column="11" lean-forward="false" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -170,9 +168,9 @@
         <option value="$PROJECT_DIR$/src/components/Project - Broken/Form.jsx" />
         <option value="$PROJECT_DIR$/src/components/Project/renderField.js" />
         <option value="$PROJECT_DIR$/src/components/Project/renderInput.js" />
-        <option value="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" />
         <option value="$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js" />
         <option value="$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js" />
+        <option value="$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js" />
       </list>
     </option>
   </component>
@@ -325,12 +323,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501322987499</updated>
-      <workItem from="1501322992981" duration="14557000" />
+      <workItem from="1501322992981" duration="16464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14557000" />
+    <option name="totallyTimeSpent" value="16464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="379" y="43" width="1041" height="757" extended-state="0" />
@@ -407,7 +405,7 @@
         <state relative-caret-position="420">
           <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -479,16 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormFirstPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -501,8 +489,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormSecondPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        <state relative-caret-position="443">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="47" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Project/WizardFormThirdPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="61" column="11" lean-forward="false" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
