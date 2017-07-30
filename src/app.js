@@ -28,6 +28,7 @@ import Home from 'src/containers/Home';
 import Login from 'src/containers/Login';
 import Profile from 'src/containers/Profile';
 import Project from 'src/containers/Project';
+import ProjectProfile from 'src/containers/ProjectProfile';
 
 
 // GraphQL queries
@@ -62,6 +63,7 @@ class App extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/Project/create" component={Project} />
+          <Route exact path="/ProjectProfile" component={ProjectProfile} />
 
           {/* Stories */}
 
