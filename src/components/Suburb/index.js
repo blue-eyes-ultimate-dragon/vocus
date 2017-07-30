@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, Container } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import s from './styles.scss';
+import ProjectList from 'src/components/ProjectList';
 import cx from 'classnames';
 import axios from 'axios';
 import employment from './workforce.json';
+import s from './styles.scss';
 
 class Suburb extends Component {
   constructor(props, context) {
@@ -72,9 +73,13 @@ class Suburb extends Component {
             </h1>
             <div style={{ width: '100%', height: '480px' }} id="mapContainer" />
           </Col>
-          <Col md={{ size: 6 }}>Sorry there are no projects in this suburb</Col>
           <Col md={{ size: 6 }}>
-            <p> LGA / Council: {this.state.council} </p>
+            <ProjectList />
+          </Col>
+          <Col md={{ size: 6 }}>
+            <p>
+              {' '}LGA / Council: {this.state.council}{' '}
+            </p>
             {suburbEmployment &&
               Object.keys(suburbEmployment)
                 .filter(val => {
@@ -85,8 +90,7 @@ class Suburb extends Component {
                   (<p>
                     {' '}Predicted Employment in {val} for LGA: {suburbEmployment[val]}
                   </p>),
-                )
-            }
+                )}
           </Col>
         </Row>
       </Container>
