@@ -17,7 +17,6 @@ const loggedInbar = user =>
     <NavItem>
       <Link to="/stories">Votes</Link>
     </NavItem>
-    <NavItem divider />
     <NavItem>
       <Link to="/stories">
         <i className="fa fa-users" />
@@ -53,7 +52,6 @@ const loggedOutBar = () =>
     <NavItem>
       <Link to="/stories">Votes</Link>
     </NavItem>
-    <NavItem divider />
     <NavItem className="mr-auto">
       <Link to="/login">
         <Button size="sm" outline color="primary">
@@ -67,14 +65,7 @@ const loggedOutBar = () =>
 class Navigation extends React.PureComponent {
   render() {
     const { data, routeQueryData } = this.props;
-    let user = (routeQueryData && routeQueryData.user) || {};
-    user = Object.assign({}, user, {
-      logo: (
-        <img
-          className={s.responsive}
-          src="http://content.prnewswire.com/images/theScore_logo_yellow_blue_2016.jpg" />
-      ),
-    });
+    console.log('rendering');
     return (
       <Navbar className={cx(s.menu)} toggleable>
         <Container>

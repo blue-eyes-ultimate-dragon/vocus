@@ -3,16 +3,19 @@ import { graphql } from 'react-apollo';
 import Helmet from 'react-helmet';
 import Intro from 'src/components/Intro';
 import Navigation from 'src/components/Navigation';
-import { saveCoordinates } from 'reducers/coordinates';
 import { connect } from 'react-redux';
+import Suburb from 'src/components/Suburb';
+import { Link } from 'react-router-dom';
 
-class Home extends Component {
+@connect(({ user }) => ({ user }))
+class SuburbContainer extends Component {
   render() {
+    console.log(Navigation);
     return (
       <div>
-        <Helmet title="Vocus" />
+        <Helmet title="Stories | Vocus" />
         <Navigation {...this.props} />
-        <Intro {...this.props} />
+        <Suburb {...this.props} />
       </div>
     );
   }
@@ -22,10 +25,4 @@ const mapStateToProps = state => ({
   coordinates: state.coordinates,
 });
 
-const mapDispatchToProps = dispatch => ({
-  saveCoordinates: latlong => {
-    dispatch(saveCoordinates(latlong));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(SuburbContainer);

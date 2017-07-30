@@ -18,6 +18,7 @@ import Immutable from 'seamless-immutable';
 
 // Reducers -- CHANGE THIS TO REFLECT YOUR OWN REDUCERS!
 import userReducer from 'reducers/user';
+import coordinatesReducer from 'reducers/coordinates';
 import { reducer as formReducer } from 'redux-form';
 
 // ----------------------
@@ -26,7 +27,7 @@ import { reducer as formReducer } from 'redux-form';
 const hasState = !!(!SERVER && window.__STATE__);
 
 // All reducers, in one array -- CHANGE THIS TO REFLECT YOUR OWN REDUCERS!
-const reducers = [userReducer];
+const reducers = [userReducer, coordinatesReducer];
 
 // Helper function that 'unwinds' the { reducerKey {state, reducer} } format
 // from each imported reducer, and either returns the `reducer` function (if

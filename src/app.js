@@ -12,11 +12,7 @@ import { graphql } from 'react-apollo';
 import { connect } from 'react-redux';
 
 // Routing
-import {
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 // <Helmet> component for setting the page title
 import Helmet from 'react-helmet';
@@ -26,8 +22,13 @@ import Helmet from 'react-helmet';
 import { NotFound, Redirect } from 'kit/lib/routing';
 import Home from 'src/containers/Home';
 import Login from 'src/containers/Login';
+import SignUp from 'src/containers/SignUp';
 import Profile from 'src/containers/Profile';
+<<<<<<< HEAD
 import Discover from 'src/containers/Discover';
+=======
+import Suburb from 'src/containers/Suburb';
+>>>>>>> Add google places api and here mapss
 
 
 // GraphQL queries
@@ -37,12 +38,10 @@ import './styles.global.css';
 
 // ----------------------
 // Create a route that will be displayed when the code isn't found
-const WhenNotFound = () => (
-  <NotFound>
+const WhenNotFound = () =>
+  (<NotFound>
     <h1>Unknown route - the 404 handler was triggered!</h1>
-  </NotFound>
-);
-
+  </NotFound>);
 
 // Export a simple component that allows clicking on list items to change
 // the route, along with a <Route> 'listener' that will conditionally display
@@ -53,16 +52,22 @@ class App extends React.Component {
       <div>
         <Helmet
           title="ReactQL application"
-          meta={[{
-            name: 'description',
-            content: 'ReactQL starter kit app',
-          }]} />
+          meta={[
+            {
+              name: 'description',
+              content: 'ReactQL starter kit app',
+            },
+          ]} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
-
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/profile" component={Profile} />
+<<<<<<< HEAD
           <Route exact path="/discover" component={Discover} />
+=======
+          <Route path="/locations/:location" component={Suburb} />
+>>>>>>> Add google places api and here mapss
           {/* Stories */}
 
           {/* <Route path="/page/:name" component={Page} />*/}
@@ -77,6 +82,5 @@ class App extends React.Component {
 const mapStateToProps = ({ user }) => ({
   user,
 });
-
 
 export default App;

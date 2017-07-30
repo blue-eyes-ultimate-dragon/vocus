@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.intro {
+  margin-top: 60px;
+  padding: 20px 20px 40px;
+  background: $white;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+
+  p {
+    font-size: 19px !important;
+  }
+
+  .logo {
+    font-family: 'Baloo Thambi', $sans !important;
+    width: 100% !important;
+    font-size: 3rem;
+    text-align: center;
+    color: $primary;
+  }
+}
+
+.img {
+  max-width: 100%;
+}

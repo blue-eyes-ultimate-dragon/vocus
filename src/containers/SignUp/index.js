@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 import { registerUser } from 'reducers/user';
 
 import Navigation from 'src/components/Navigation';
-import Login from 'src/components/Login';
+import SignUp from 'src/components/SignUp';
 
-class LoginPage extends Component {
+class SjgnUpPage extends Component {
   render() {
     return (
       <div>
         <Helmet title="Login to Vocus" />
         <Navigation {...this.props} />
-        <Login {...this.props} />
+        <SignUp {...this.props} />
       </div>
     );
   }
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SjgnUpPage);
