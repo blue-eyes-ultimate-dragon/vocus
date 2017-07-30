@@ -63,7 +63,7 @@ class App extends React.Component {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/discover" component={Discover} />
           <Route path="/locations/:location" component={Suburb} />
-          <Route path="/location/:location/:projectId" component={ProjectDetail} />
+          <Route path="/projects/:projectId" component={ProjectDetail} />
 
           {/* Stories */}
 

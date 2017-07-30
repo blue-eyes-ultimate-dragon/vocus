@@ -4,7 +4,7 @@ import { Label, Form, FormGroup, Input,  Media, Progress, Container, Row, Button
 import { Link } from 'react-router-dom';
 import s from './styles.scss';
 
-import list from './../../list.json';
+import list from './../Suburb/projects';
 
 const ProjectItem = props => {
 
@@ -13,7 +13,7 @@ const ProjectItem = props => {
   return (<Row className={s.item}>
     <Media>
       <Media left>
-        <Media object src={props.project.image}/>
+        <Media object src={props.project.image} className={s.img}/>
       </Media>
       <Media body className={s.listContent}>
         <Media heading>
@@ -68,6 +68,8 @@ class Detail extends React.Component {
     this.state = {
       modal: false
     };
+
+    console.log('>>>>>>>>>> '+props.match.params.projectId);
 
     this.project = list.find((item) =>  item.id === props.match.params.projectId);
     this.toggle = this.toggle.bind(this);

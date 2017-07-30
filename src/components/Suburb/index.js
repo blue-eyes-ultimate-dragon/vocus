@@ -107,9 +107,9 @@ class Suburb extends Component {
                     <img className={s.img} src={val.image} />
                   </Col>
                   <Col md={6}>
-                    <h3>
+                    <a href={`/projects/` + val.id}><h3>
                       {val.name}
-                    </h3>
+                    </h3></a>
                     <DotDotDot clamp={4}>
                       {val.description}
                     </DotDotDot>

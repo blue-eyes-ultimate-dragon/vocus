@@ -1,11 +1,16 @@
 @import '../../variables.scss';
 
 
+.img{
+  width: 100%;
+}
+
 .projectList{
   margin-top: 25px;
 }
 
 .listContent{
+  clear: both;
   padding-left: 15px;
 }
 
