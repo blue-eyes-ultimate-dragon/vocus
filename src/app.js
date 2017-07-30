@@ -11,7 +11,7 @@ import { graphql } from 'react-apollo';
 // Listen to Redux store state
 import { connect } from 'react-redux';
 
-// Routing
+// Routing¯
 import { Link, Route, Switch } from 'react-router-dom';
 
 // <Helmet> component for setting the page title

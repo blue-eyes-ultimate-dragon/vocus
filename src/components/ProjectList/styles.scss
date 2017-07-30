@@ -1,1 +1,23 @@
 @import '../../variables.scss';
+
+
+.projectList{
+  margin-top: 25px;
+}
+
+.listContent{
+  padding-left: 15px;
+}
+
+
+.progress {
+  float: left;
+  margin: 10px 15px;
+  width: 100%;
+}
+
+.mainSection {
+  float: left;
+  margin: 15px;
+  width: 25%;
+}

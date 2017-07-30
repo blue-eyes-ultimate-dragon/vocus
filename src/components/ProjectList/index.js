@@ -1,57 +1,59 @@
 import React from 'react';
-import { Media } from 'reactstrap';
+import { Media, Progress, Container, Row } from 'reactstrap';
 import s from './styles.scss';
 
+import list from './../../list.json';
 
-const ProjectItem = props => (
-  <Media>
-    <Media left href="#">
-      <Media object data-src="holder.js/64x64"/>
-    </Media>
-    <Media body>
-      <Media heading>
-        Media heading
+const ProjectItem = props =>
+  (<Row className={s.item}>
+    <Media>
+      <Media left>
+        <Media object src={props.project.image} />
       </Media>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus
-      odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-      lacinia congue felis in faucibus.
+      <Media body className={s.listContent}>
+        <Media heading>
+          <h2>
+            {props.project.name}
+          </h2>
+        </Media>
+        {props.project.description}
+      </Media>
     </Media>
-  </Media>);
+
+    <div className={s.progress}>
+      <div className="text-center">
+        {props.project.progress}%
+      </div>
+      <Progress color="success" value={props.project.progress} />
+    </div>
+
+    <div className={s.mainSection}>
+      <h4>
+        Goal: ${props.project.goal.toLocaleString('en')}{' '}
+      </h4>
+    </div>
+
+    <div className={s.mainSection}>
+      <h4>
+        Pledge: ${props.project.pledge.toLocaleString('en')}
+      </h4>
+    </div>
+
+    <div className={s.mainSection}>
+      <h4>
+        Days: {props.project.day}
+      </h4>
+    </div>
+  </Row>);
 
 const ProjectList = props => {
-
-  let projects = [
-    {
-      name: "Project name",
-      image: "project-image.jpg"
-    },
-    {
-      name: "Project name 1",
-      image: "project-image-1.jpg"
-    },
-    {
-      name: "Project name 2",
-      image: "project-image-2.jpg"
-    }
-  ]
+  const projects = list;
 
   return (
-    <ul>
-      {projects.map(function(project, index){
-        return <ProjectItem></ProjectItem>
-      })}
-    </ul>
-  )
-
-
-
-
-
-
-}
-
-
-
+    <Container className={s.projectList}>
+      {projects.map((project, index) => <ProjectItem project={project} />)}
+    </Container>
+  );
+};
 
 export default ProjectList;
-
