@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Container } from 'reactstrap';
+import { Row, Col, Button, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ProjectList from 'src/components/ProjectList';
 import cx from 'classnames';
 import axios from 'axios';
-import employment from './workforce.json';
+import workforce from './workforce.json';
+import population from './population.json';
+
 import s from './styles.scss';
 
 class Suburb extends Component {
@@ -61,8 +63,8 @@ class Suburb extends Component {
   }
 
   render() {
-    const suburbEmployment = employment.find(val => val.LGA === this.state.council);
-    console.log(suburbEmployment);
+    const suburbWorkForce = workforce.find(val => val.LGA === this.state.council);
+    const suburbPopulation = population.find(val => val.LGA === this.state.council);
     return (
       <Container className={s.background}>
         <Row>
@@ -73,24 +75,59 @@ class Suburb extends Component {
             </h1>
             <div style={{ width: '100%', height: '480px' }} id="mapContainer" />
           </Col>
-          <Col md={{ size: 6 }}>
+          <Col md={{ size: 7 }}>
             <ProjectList />
           </Col>
-          <Col md={{ size: 6 }}>
-            <p>
+          <Col md={{ size: 5 }}>
+            <h4>
               {' '}LGA / Council: {this.state.council}{' '}
-            </p>
-            {suburbEmployment &&
-              Object.keys(suburbEmployment)
-                .filter(val => {
-                  console.log(val);
-                  return val !== 'LGA' && val !== 'GSC District';
-                })
-                .map(val =>
-                  (<p>
-                    {' '}Predicted Employment in {val} for LGA: {suburbEmployment[val]}
-                  </p>),
-                )}
+            </h4>
+            <h4> Predicted Population </h4>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Population</th>
+                </tr>
+              </thead>
+              <tbody>
+                {suburbPopulation &&
+                  Object.keys(suburbPopulation)
+                    .filter(val => {
+                      console.log(val);
+                      return val !== 'LGA' && val !== 'GSC District';
+                    })
+                    .map(val =>
+                      (<tr>
+                        <th scope="row">{val}</th>
+                        <td>{suburbPopulation[val]}</td>
+                      </tr>),
+                    )}
+              </tbody>
+            </Table>
+            <h4> Predicted Workforce (LGA) </h4>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Employment</th>
+                </tr>
+              </thead>
+              <tbody>
+                {suburbWorkForce &&
+                  Object.keys(suburbWorkForce)
+                    .filter(val => {
+                      console.log(val);
+                      return val !== 'LGA' && val !== 'GSC District';
+                    })
+                    .map(val =>
+                      (<tr>
+                        <th scope="row">{val}</th>
+                        <td>{suburbWorkForce[val]}</td>
+                      </tr>),
+                    )}
+              </tbody>
+            </Table>
           </Col>
         </Row>
       </Container>
