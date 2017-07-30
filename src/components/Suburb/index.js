@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Button, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ProjectList from 'src/components/ProjectList';
+import projects from './projects';
+import DotDotDot from 'react-dotdotdot';
 import cx from 'classnames';
 import axios from 'axios';
 import workforce from './workforce.json';
@@ -19,6 +21,7 @@ class Suburb extends Component {
       },
       suburb: {},
       council: null,
+      projects: [],
     };
   }
 
@@ -53,9 +56,28 @@ class Suburb extends Component {
 
     // Instantiate (and display) a map object:
     const map = new H.Map(document.getElementById('mapContainer'), maptypes.normal.map, {
-      zoom: 14,
+      zoom: 12,
       center: this.props.coordinates,
     });
+
+    const svgMarkup =
+      '<svg width="24" height="24" ' +
+      'xmlns="http://www.w3.org/2000/svg">' +
+      '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+      'height="22" /><text x="12" y="18" font-size="12pt" ' +
+      'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+      'fill="white">H</text></svg>';
+
+    // Create an icon, an object holding the latitude and longitude, and a marker:
+    const renderedProjects = projects.filter(val => val.LGA === this.state.council);
+
+    const renderedMarkers = renderedProjects.map(val => {
+      const icon = new H.map.Icon(svgMarkup);
+      const marker = new H.map.Marker(val.coordinates, { icon });
+      map.addObject(marker);
+    });
+
+    // Add the marker to the map and center the map at the location of the marker:
   }
 
   componentWillReceiveProps(nextProps) {
@@ -65,6 +87,7 @@ class Suburb extends Component {
   render() {
     const suburbWorkForce = workforce.find(val => val.LGA === this.state.council);
     const suburbPopulation = population.find(val => val.LGA === this.state.council);
+    const renderedProjects = projects.filter(val => val.LGA === this.state.council);
     return (
       <Container className={s.background}>
         <Row>
@@ -75,10 +98,27 @@ class Suburb extends Component {
             </h1>
             <div style={{ width: '100%', height: '480px' }} id="mapContainer" />
           </Col>
-          <Col md={{ size: 7 }}>
-            <ProjectList />
+          <Col md={{ size: 8 }}>
+            <h3> Projects </h3>
+            {(renderedProjects.length &&
+              renderedProjects.map(val =>
+                (<Row className="mt-2">
+                  <Col md={6}>
+                    <img className={s.img} src={val.image} />
+                  </Col>
+                  <Col md={6}>
+                    <h3>
+                      {val.name}
+                    </h3>
+                    <DotDotDot clamp={4}>
+                      {val.description}
+                    </DotDotDot>
+                  </Col>
+                </Row>),
+              )) ||
+              <p>No projects found</p>}
           </Col>
-          <Col md={{ size: 5 }}>
+          <Col md={{ size: 4 }}>
             <h4>
               {' '}LGA / Council: {this.state.council}{' '}
             </h4>
@@ -93,14 +133,15 @@ class Suburb extends Component {
               <tbody>
                 {suburbPopulation &&
                   Object.keys(suburbPopulation)
-                    .filter(val => {
-                      console.log(val);
-                      return val !== 'LGA' && val !== 'GSC District';
-                    })
+                    .filter(val => val !== 'LGA' && val !== 'GSC District')
                     .map(val =>
                       (<tr>
-                        <th scope="row">{val}</th>
-                        <td>{suburbPopulation[val]}</td>
+                        <th scope="row">
+                          {val}
+                        </th>
+                        <td>
+                          {suburbPopulation[val]}
+                        </td>
                       </tr>),
                     )}
               </tbody>
@@ -116,14 +157,15 @@ class Suburb extends Component {
               <tbody>
                 {suburbWorkForce &&
                   Object.keys(suburbWorkForce)
-                    .filter(val => {
-                      console.log(val);
-                      return val !== 'LGA' && val !== 'GSC District';
-                    })
+                    .filter(val => val !== 'LGA' && val !== 'GSC District')
                     .map(val =>
                       (<tr>
-                        <th scope="row">{val}</th>
-                        <td>{suburbWorkForce[val]}</td>
+                        <th scope="row">
+                          {val}
+                        </th>
+                        <td>
+                          {suburbWorkForce[val]}
+                        </td>
                       </tr>),
                     )}
               </tbody>
