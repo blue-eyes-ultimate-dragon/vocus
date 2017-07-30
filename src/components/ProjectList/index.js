@@ -7,12 +7,12 @@ const ProjectItem = props => {
 
   return (
 
-<Row>
+<Row className={s.item}>
   <Media>
     <Media left>
       <Media object src={props.project.image}/>
     </Media>
-    <Media body>
+    <Media body className={s.listContent}>
       <Media heading>
         <h2>{props.project.name}</h2>
       </Media>
@@ -89,7 +89,7 @@ const ProjectList = props => {
   ]
 
   return (
-    <Container>
+    <Container className={s.projectList}>
       {projects.map(function(project, index){
         return <ProjectItem project={project}></ProjectItem>
       })}
