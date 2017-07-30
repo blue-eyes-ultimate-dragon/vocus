@@ -8,6 +8,7 @@ import cx from 'classnames';
 import axios from 'axios';
 import workforce from './workforce.json';
 import population from './population.json';
+import travelTime from './transport.json';
 
 import s from './styles.scss';
 
@@ -21,7 +22,6 @@ class Suburb extends Component {
       },
       suburb: {},
       council: null,
-      projects: [],
     };
   }
 
@@ -122,6 +122,16 @@ class Suburb extends Component {
             <h4>
               {' '}LGA / Council: {this.state.council}{' '}
             </h4>
+            {Object.keys(travelTime).map(val => {
+              if (this.state.council && this.state.council.includes(val)) {
+                return (
+                  <h6>
+                    Average Travel Time to Work: {travelTime[val]}
+                    {' minutes'}
+                  </h6>
+                );
+              }
+            })}
             <h4> Predicted Population </h4>
             <Table>
               <thead>
