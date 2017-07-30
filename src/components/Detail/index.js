@@ -1,15 +1,19 @@
 import React from 'react';
-import { Media, Progress, Container, Row } from 'reactstrap';
+import { Field, reduxForm } from 'redux-form';
+import { Label, Form, FormGroup, Input,  Media, Progress, Container, Row, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import s from './styles.scss';
 
 import list from './../../list.json';
 
-const ProjectItem = props =>
-  (<Row className={s.item}>
+const ProjectItem = props => {
+
+
+
+  return (<Row className={s.item}>
     <Media>
       <Media left>
-        <Media object src={props.project.image} />
+        <Media object src={props.project.image}/>
       </Media>
       <Media body className={s.listContent}>
         <Media heading>
@@ -25,7 +29,7 @@ const ProjectItem = props =>
       <div className="text-center">
         {props.project.progress}%
       </div>
-      <Progress color="success" value={props.project.progress} />
+      <Progress color="success" value={props.project.progress}/>
     </div>
 
     <div className={s.mainSection}>
@@ -46,16 +50,67 @@ const ProjectItem = props =>
       </h4>
     </div>
 
-  </Row>);
 
-const Detail = props => {
-  const project = list.find((item) =>  item.id === props.match.params.projectId);
 
-  return (
-    <Container className={s.projectList}>
-      <ProjectItem project={project}></ProjectItem>
-    </Container>
-  );
+
+
+
+  </Row>)
+
+};
+
+class Detail extends React.Component {
+
+
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      modal: false
+    };
+
+    this.project = list.find((item) =>  item.id === props.match.params.projectId);
+    this.toggle = this.toggle.bind(this);
+
+  }
+
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  render() {
+    return (
+      <Container className={s.projectList}>
+        <ProjectItem project={this.project}></ProjectItem>
+
+
+        <Button color="danger" onClick={this.toggle}>Pledge to this project</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>Pledge amount for "{this.project.name}"</ModalHeader>
+          <ModalBody>
+            <Form>
+              <FormGroup>
+                <Label for="pledgeAmount">Pledge amount ($)</Label>
+                <Input type="number" name="pledgeAmount" id="pledgeAmount" placeholder="Enter your amount here" />
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle}>Pledge</Button>{' '}
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+
+
+      </Container>
+    );
+  }
+
+
+
 };
 
 
