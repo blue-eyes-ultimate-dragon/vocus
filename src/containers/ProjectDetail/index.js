@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import Helmet from 'react-helmet';
 import Navigation from 'src/components/Navigation';
-import ProjectDeail from 'src/components/ProjectDetail';
+import Detail from 'src/components/Detail';
 
 import { connect } from 'react-redux';
 
@@ -12,7 +12,7 @@ class ProjectDetail extends Component {
       <div>
         <Helmet title="Project deail" />
         <Navigation {...this.props} />
-        <ProjectDeail></ProjectDeail>
+        <Detail {...this.props}></Detail>
       </div>
     );
   }

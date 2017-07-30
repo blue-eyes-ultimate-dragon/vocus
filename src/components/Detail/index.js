@@ -46,18 +46,18 @@ const ProjectItem = props =>
       </h4>
     </div>
 
-    <Link to={`/location/parramatta/` + props.project.id}><h2>Read more</h2></Link>
-
   </Row>);
 
-const ProjectDeail = props => {
-  const projects = list;
+const Detail = props => {
+  const project = list[0];
 
   return (
     <Container className={s.projectList}>
-      {projects.map((project, index) => <ProjectItem project={project} />)}
+      <ProjectItem project={project}></ProjectItem>
     </Container>
   );
 };
 
-export default ProjectDeail;
+
+
+export default Detail;
